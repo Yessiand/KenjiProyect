@@ -1,0 +1,19 @@
+.cartwidget {
+    align-items: center;
+    padding: 50px;
+  }
+  
+  .badge {
+    background-color: red;
+    color: white;
+    padding: 0px 5px;
+    text-align: center;
+    border-radius: 15px;
+  }
+  .cart {
+    width: 20px;
+    height: 20px;
+  }
+  .down {
+    background-color: rgb(125, 26, 52) !important;
+  }
