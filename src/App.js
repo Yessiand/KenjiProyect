@@ -18,7 +18,7 @@ export default function App() {
             <NavBarCustom menus={menus} categorias={categorias}/>
             <Routes>
                 <Route exact path="/" element={<Home/>}/>
-                <Route exact path="/category/:id" element={<ItemListContainer data={productos}/>}/>
+                <Route exact path="/categoria/:id" element={<ItemListContainer data={productos}/>}/>
             </Routes>
         </BrowserRouter>
       

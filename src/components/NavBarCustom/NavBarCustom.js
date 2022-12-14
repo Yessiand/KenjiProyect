@@ -24,10 +24,10 @@ const NavBarCustom = ({ menus, categorias }) => {
                 </Container>
                 <Nav >
                     {
-                        menus.map((menu) => {
+                        menus.map((menu, index) => {
                             return (
-                                <Nav.Item>
-                                    <Nav.Link className={style.navList} href={menu.href}>{menu.name}</Nav.Link>
+                                <Nav.Item key={index + "_navItem"}>
+                                    <Nav.Link key={index + "_navLink"} className={style.navList} href={menu.href}>{menu.name}</Nav.Link>
                                 </Nav.Item>
                             )
                         })

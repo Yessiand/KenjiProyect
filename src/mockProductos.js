@@ -1,31 +1,32 @@
 const productos = [
     {
         id: 1,
-        name: "Dolce Gabana",
-        precio: 300000,
+        name: "Dolce Gabanna",
+        precio:  420000,
         categoria: 1,
-        imagen: "https://www.google.com/logos/doodles/2022/seasonal-holidays-2022-6753651837109831.3-law.gif"
+        path: "/img/locionUna.png"
+        
     },
     {
         id: 2,
-        name: "Cartier",
-        precio: 300000,
+        name: "Must de Cartier",
+        precio: 350000,
         categoria: 1,
-        imagen: "https://www.google.com/logos/doodles/2022/seasonal-holidays-2022-6753651837109831.3-law.gif"
+        path: "/img/locionDos.png"
     },
     {
         id: 3,
-        name: "CH",
-        precio: 300000,
+        name: "Good girl",
+        precio: 480000,
         categoria: 2,
-        imagen: "https://www.google.com/logos/doodles/2022/seasonal-holidays-2022-6753651837109831.3-law.gif"
+        path: "/img/locionTres.png"
     },
     {
         id: 4,
         name: "Mont Blanc",
-        precio: 300000,
+        precio: 610000,
         categoria: 2,
-        imagen: "https://www.google.com/logos/doodles/2022/seasonal-holidays-2022-6753651837109831.3-law.gif"
+        path: "/img/locionCuatro.png"
     }
 ];
 
