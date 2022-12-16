@@ -1,20 +1,16 @@
 import CardWidget from "../CardWidget/CardWidget.js";
+import style from './style/NavBar.module.css';
 
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { NavLink, Link } from "react-router-dom";
 
-
-import style from './style/NavBar.module.css';
-
-const NavBarCustom = ({ menus, categorias }) => {
+const NavBarCustom = ({ menus }) => {
     return (
         <>
             <Navbar bg="" variant="" className={style.navbarCustom}>
                 <Container>
-                    <Navbar.Brand href="#home">
+                    <Navbar.Brand href="/">
                         <img
                             src="/img/kenjilogo.png"
                             className="d-inline-block align-top p-4 "
