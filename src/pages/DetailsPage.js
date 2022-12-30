@@ -5,23 +5,32 @@ import { useParams } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 
+import { getFirestore, doc, getDoc } from "firebase/firestore"
+
 
 
 export default function DetailsPage() {
+    const [productDetails, setData] = useState([]);
     const navigate = useNavigate();
-    const navigateToPerfumesPage = () => {
-        navigate('/perfumes');
-    };
     const params = useParams();
-    let productDetails = productos.filter(element => element.id == params.productId);
-
-    if (productDetails.length > 0) {
-        productDetails = productDetails[0];
-    }
+    const navigateToPerfumesPage = () => {
+        alert('El producto no existe en la base de datos.')
+        navigate('/');
+    };
     useEffect(() => {
-        if (productDetails.length == 0) {
-            navigateToPerfumesPage();
-        }
+        const querydb = getFirestore();
+        const queryDoc = doc(querydb, 'loreto_productos', params.productId);
+
+        getDoc(queryDoc)
+        .then(res => {
+            const data = {id: res.id, ...res.data()};
+            if (data.hasOwnProperty('name')) {
+                setData({id: res.id, ...res.data()});
+            } else {
+                navigateToPerfumesPage();
+            }
+        })
+        .catch(error => console.log(error.message));
     });
     return (
         <>

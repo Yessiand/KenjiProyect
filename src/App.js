@@ -8,6 +8,9 @@ import productos from "./mockProductos.js";
 import Home from "./pages/HomePage.js";
 import CatalogPage from "./pages/CatalogPage.js";
 import DetailsPage from "./pages/DetailsPage.js";
+import CartProvider from "./context/CartContext"
+import Cart from "./components/Cart/Cart.js";
+import Checkout from "./components/Checkout/Checkout.js";
 
 
 export default function App() {
@@ -21,13 +24,16 @@ export default function App() {
 
     return (
         <BrowserRouter>
-            <NavBarCustom menus={menus} categorias={categorias}/>
-            <Routes>
-                <Route exact path="/" element={<Home/>}/>
-                <Route exact path="/perfumes" element={<CatalogPage data={data}/>}/>
-                <Route exact path="/perfumes/categoria/:categoryId" element={<CatalogPage data={data}/>}/>
-                <Route exact path="/perfumes/producto/:productId" element={<DetailsPage/>}/>
-            </Routes>
+            <CartProvider>
+                <NavBarCustom menus={menus} categorias={categorias}/>
+                <Routes>
+                    <Route exact path="/" element={<CatalogPage data={data}/>}/>
+                    <Route exact path="/perfumes/categoria/:categoryId" element={<CatalogPage data={data}/>}/>
+                    <Route exact path="/perfumes/producto/:productId" element={<DetailsPage/>}/>
+                    <Route exact path="/cart" element={<Cart/>}/>
+                    <Route exact path='/checkout' element={<Checkout/>}/>
+                </Routes>
+            </CartProvider>
         </BrowserRouter>
     );
 }
