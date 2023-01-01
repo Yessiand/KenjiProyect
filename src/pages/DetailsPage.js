@@ -31,7 +31,7 @@ export default function DetailsPage() {
             }
         })
         .catch(error => console.log(error.message));
-    });
+    },[]);
     return (
         <>
             <DetailsContainer data={productDetails} />

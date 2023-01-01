@@ -1,0 +1,11 @@
+.itemCart {
+    border: 1px solid gray;
+    border-radius: 30px;
+    display: inline;
+}
+
+.imgItemCart {
+    width: 200px;
+    height: 200px;
+    margin-left: 50px;
+}

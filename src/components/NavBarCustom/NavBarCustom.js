@@ -13,7 +13,7 @@ const NavBarCustom = ({ menus }) => {
                 <Container>
                     <Navbar.Brand href="/">
                         <img
-                            src="/img/kenjilogo.png"
+                            src="/img/lorettologo.png"
                             className="d-inline-block align-top p-4 "
                             alt="React Bootstrap logo"
                         />

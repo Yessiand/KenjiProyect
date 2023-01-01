@@ -23,7 +23,7 @@ const Checkout = () => {
     }
 
     return (
-        <div>
+        <div className="container">
             <FormularioCompra handleId={handleId}/>
         </div>
     );

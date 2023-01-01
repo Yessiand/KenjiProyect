@@ -24,7 +24,7 @@ const ItemListContainer = () => {
             .then(res => setData(res.docs.map(product => ({id: product.id, ...product.data()}))))
             .catch(error => console.log(error.message))
         }
-    });
+    }, []);
     
 
     data.forEach((element, index) => {
@@ -32,7 +32,7 @@ const ItemListContainer = () => {
             <div style={{ display:'inline-block', marginLeft:'100px',marginTop:'80px', padding:'10px', border:'2px solid grey', fontFamily:'cursive', fontSize:'16px',boxShadow:'0px 2.60465px rgba(0, 0, 0, 0.1)' }}  key={index + "__product"}>
                 <ul style={{listStyleType:'none', display:'inline-block'}} >
                     <li style={{padding:'10px'}}> {element.name}</li>
-                    <li style={{marginTop:'10px'}}> <img style={{width:'200px', height: '20 0px'}} src={element.path}/></li>
+                    <li style={{marginTop:'10px'}}> <img style={{width:'200px', height: '200px'}} src={element.path}/></li>
                     <li>
                         <Link to={'/perfumes/producto/' + element.id}>Ver detalles</Link>
                     </li>

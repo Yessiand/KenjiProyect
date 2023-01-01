@@ -5,7 +5,7 @@ import React from "react";
 
 export const ItemListContainer= ({}) => {
 const onAdd = (quantity) => {
-    console.log()
+    alert("Se agregaron" + quantity + " unidades.");
 }
 return (
     <>

@@ -3,6 +3,7 @@ import { useCartContext } from "../../context/CartContext";
 import ItemCart from "../ItemCart/ItemCart";
 import Checkout from "../Checkout/Checkout";
 import { Link } from "react-router-dom";
+import styles from "./style/cart.module.css"
 
 const Cart = () => {
     const { cart, totalPrice } = useCartContext();
@@ -20,9 +21,10 @@ const Cart = () => {
             {
                 cart.map(product => <ItemCart key={product.id} product={product} />)
             }
-            <p>
-                total: {totalPrice()}
-            </p>
+            <div className={styles.totalPrice}>
+                <h3>total: {totalPrice()}</h3>
+            </div>
+            <br></br>
             <Checkout/>
         </>
     );

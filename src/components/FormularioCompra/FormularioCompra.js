@@ -13,56 +13,57 @@ const FormularioCompra = ({handleId}) => {
         ciudad: '',
         direccion: '',
         email: '',
-        items: cart.map(product => ({id: product.id, producto: product.name, precio: product.precio, cantidad: product.count})),
+        items: cart.map(product => ({id: product.id, producto: product.name, precio: product.precio, cantidad: product.quantity})),
         total: totalPrice()
     };
 
     const [infoUser, setInfoUser] = useState(order);
 
-    const captureInput = (e) => {
-        const {name, value} = e.target;
-        setInfoUser({...infoUser, [name]:value});
-    }
-
     const saveDataUser = async(e) => {  
         e.preventDefault()
-        
+        infoUser.nombre = e.target[0].value;
+        infoUser.email = e.target[1].value;
+        infoUser.telefono = e.target[2].value;
+        infoUser.ciudad = e.target[3].value;
+        infoUser.direccion = e.target[4].value;
         const db = getFirestore();
-        const orderCollection = collection(db, 'loreto_ordenes');
+        const orderCollection = collection(db, 'loreto_ordenes_compra');
         addDoc(orderCollection, infoUser)
-        .then((res) => {
-            handleId(res.id);
+        .then((response) => {
+            alert("Su compra ha sido realizada correctamente con el id: " + response.id)
             clearCart()
         });
     }
 
     return (
-        <div className="form-control">
+        <>
             <h1>Ingresa tus datos de envio:</h1>
             <form onSubmit={saveDataUser}>
-                <label>
-                    <p>Nombre:</p>
-                    <input type="text" name="nombre" onChange={captureInput} value={infoUser.nombre}/>
-                </label>
-                <label>
-                    <p>Teléfono:</p>
-                    <input type="text" name="telefono" onChange={captureInput} value={infoUser.telefono}/>
-                </label>
-                <label>
-                    <p>Ciudad:</p>
-                    <input type="text" name="ciudad" onChange={captureInput} value={infoUser.ciudad}/>
-                </label>
-                <label>
-                    <p>Dirección:</p>
-                    <input type="text" name="direccion" onChange={captureInput} value={infoUser.direccion}/>
-                </label>
-                <label>
-                    <p>Email:</p>
-                    <input type="email" name="email" onChange={captureInput} value={infoUser.email}/>
-                </label>
-                <button type="submit">Terminar compra</button>
+                <div className="form-group">
+                    <label for="nombreInput">Nombre</label>
+                    <input type="text" className="form-control" id="nombreInput" aria-describedby="nombreHelp" placeholder="Jhon Smith"/>
+                </div>
+                <div className="form-group">
+                    <label for="emailInput">Email</label>
+                    <input type="email" className="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="jhon.smith@correo.com"/>
+                    <small id="emailHelp" className="form-text text-muted">Nunca compartiremos tu email con nadie.</small>
+                </div>
+                <div className="form-group">
+                    <label for="telefonoInput">Telefono</label>
+                    <input type="text" className="form-control" id="telefonoInput" aria-describedby="emailHelp" placeholder="3145668907"/>
+                </div>
+                <div className="form-group">
+                    <label for="ciudadInput">Ciudad</label>
+                    <input type="text" className="form-control" id="ciudadInput" aria-describedby="emailHelp" placeholder="Medellin"/>
+                </div>
+                <div className="form-group">
+                    <label for="direccionInput">Direccion</label>
+                    <input type="Direccion" className="form-control" id="direccionInput" aria-describedby="emailHelp" placeholder="Cra 56 # 56B- 07"/>
+                </div>
+                <br></br>
+                <button type="submit" className="btn btn-primary">Terminar compra</button>
             </form>
-        </div>
+        </>
     )
 }
 

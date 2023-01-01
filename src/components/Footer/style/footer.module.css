@@ -1,0 +1,60 @@
+footer {
+    color:bisque;
+    bottom: 0;
+    background-color: #110f1e ;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 20px;
+}
+.footerIntro {
+    color: bisque;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    padding-left: 10%;
+    padding-top: 4%;
+    size: 16px;
+}
+.footerIntro p {
+    padding-top: 3%;
+}
+.footerProduct h2{
+    color: #a2972e;
+    size: 28px;
+}
+.footerProduct li {
+    padding-top: 5%;
+}
+.footerProduct {
+    color: bisque ;
+    margin-left: 13%;
+    padding-top: 11%;
+    size: 16px;
+}
+.medial-social {
+    font-size: 22px;
+    color: rgba(24, 230, 228, 1);
+}
+.icon-footer {
+    padding: 6px;
+}
+.icon-heart {
+    color: rgba(24, 230, 228, 1);
+}
+.footerContact h2{
+    color: #a2972e;
+    size: 28px;
+}
+.footerContact p {
+    padding-top: 5%;
+}
+.footerContact {
+    color: bisque ;
+    margin-left: 15%;
+    padding-top: 11%;
+    size: 16px;
+}
+.footer-copyright {
+    color:#9A67FF;
+    grid-column-start: 2;
+    text-align: center;
+}

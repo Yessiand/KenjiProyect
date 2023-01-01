@@ -1,8 +1,11 @@
 .navbarCustom {
     height: 80px;
-    background-color: rgb(125, 26, 52) !important;
+    background-color: white !important;
     color: white;
+    height: 105px;
+    border-bottom: 1px solid rgb(141, 141, 141) ;
+    
 }
 .navList {
-    color: white;
+    color: gray;
 }
